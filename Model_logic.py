@@ -5,7 +5,6 @@ import re
 def frm_value(num_str):
     if num_str.find(',') != -1:
         num_str = re.sub(",",".",num_str)
-    print(num_str)
     return num_str
 
 def check_answer_calc(num):
