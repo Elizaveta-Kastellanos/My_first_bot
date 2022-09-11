@@ -1,9 +1,8 @@
 import telebot
-from commands_bot_calc import *
 from telebot import types
 import config
-from read import *
 from Model_logic import calc
+from exchange_methods import *
 
 bot = telebot.TeleBot(config.token)
 # command /start
@@ -63,8 +62,6 @@ def exchange(msg):
 def exchange(msg):
     mess = f'Я покажу тебе, все, что я могу.А могу, я очень мало:(((\nТы не обижайся, ведь, я только учусь\nЛови команды\n/calc\n/start\n/exchange'
     bot.send_message(msg.chat.id, mess)
-
-
 
 bot.polling(none_stop=True)
 
