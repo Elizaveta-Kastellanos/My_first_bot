@@ -19,6 +19,33 @@ def process_game(field,num, how_walks):
          mas_game = mas_game.replace(num, sign_o)
          return mas_game
 
+def check_win(field):
+   mas_game = field.split(f'\n')
+   sign_x = 'X'
+   sign_o = 'O'
+   for i in range(len(mas_game)):
+      tmp = str(mas_game[i])
+      if tmp.count('X') == 3:
+         return sign_x
+      elif tmp.count('O') == 3:
+         return sign_o
+   if mas_game[0][1] == mas_game[1][1] == mas_game[2][1]:
+      return mas_game[0][1]
+   if mas_game[0][3] == mas_game[1][3] == mas_game[2][3]:
+      return mas_game[0][3]
+   if mas_game[0][5] == mas_game[1][5] == mas_game[2][5]:
+      return mas_game[0][5]
+   if mas_game[0][1] == mas_game[1][3] == mas_game[2][5]:
+      return mas_game[0][1]
+   if mas_game[0][5] == mas_game[1][3] == mas_game[2][1]:
+      return mas_game[0][5]
+      
+        
+      
+
+   # print(mas_game)
+
+# print(check_win(f'_1_2_3_\n_4_5_6_\n_7_8_9_'))
 
 # field = list(range(1,10))
 
