@@ -1,4 +1,4 @@
-
+import Logger
 
 
 def game_field():
@@ -19,25 +19,32 @@ def process_game(field,num, how_walks):
          mas_game = mas_game.replace(num, sign_o)
          return mas_game
 
-def check_win(field):
+def check_win(field, user_name):
    mas_game = field.split(f'\n')
    sign_x = 'X'
    sign_o = 'O'
    for i in range(len(mas_game)):
       tmp = str(mas_game[i])
       if tmp.count('X') == 3:
+         Logger.game_tik_logger(f'Победил {sign_x} он же {user_name}')
          return sign_x
       elif tmp.count('O') == 3:
+         Logger.game_tik_logger(f'Победил {sign_o} он же {user_name}')
          return sign_o
    if mas_game[0][1] == mas_game[1][1] == mas_game[2][1]:
+      Logger.game_tik_logger(f'Победил {mas_game[0][1]} он же {user_name}')
       return mas_game[0][1]
    if mas_game[0][3] == mas_game[1][3] == mas_game[2][3]:
+      Logger.game_tik_logger(f'Победил {mas_game[0][3]} он же {user_name}')
       return mas_game[0][3]
    if mas_game[0][5] == mas_game[1][5] == mas_game[2][5]:
+      Logger.game_tik_logger(f'Победил {mas_game[0][5]} он же {user_name}')
       return mas_game[0][5]
    if mas_game[0][1] == mas_game[1][3] == mas_game[2][5]:
+      Logger.game_tik_logger(f'Победил {mas_game[0][1]} он же {user_name}')
       return mas_game[0][1]
    if mas_game[0][5] == mas_game[1][3] == mas_game[2][1]:
+      Logger.game_tik_logger(f'Победил {mas_game[0][5]} он же {user_name}')
       return mas_game[0][5]
       
         

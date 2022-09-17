@@ -109,7 +109,7 @@ def continuation_game(msg):
                     paint_field1 = game_Tic.process_game(paint_field,msg.text, how_walks)
                     paint_field = paint_field1
                     how_walks += 1
-                    qqq = game_Tic.check_win(paint_field)
+                    qqq = game_Tic.check_win(paint_field,msg.from_user.first_name)
                     if qqq == None:
                         count = [x for x in count if x != msg.text]
                         bot.send_message(msg.chat.id, paint_field, reply_markup=markup1)
@@ -127,7 +127,7 @@ def continuation_game(msg):
                     paint_field1 = game_Tic.process_game(paint_field,msg.text, how_walks)
                     paint_field = paint_field1
                     how_walks -= 1
-                    qqq = game_Tic.check_win(paint_field)
+                    qqq = game_Tic.check_win(paint_field,msg.from_user.first_name)
                     if qqq == None:
                         count = [x for x in count if x != msg.text]
                         bot.send_message(msg.chat.id, paint_field, reply_markup=markup1)
@@ -167,7 +167,7 @@ def continuation2_game(msg):
                     paint_field1 = game_Tic.process_game(paint_field,msg.text, how_walks)
                     paint_field = paint_field1
                     how_walks += 1
-                    qqq = game_Tic.check_win(paint_field)
+                    qqq = game_Tic.check_win(paint_field,msg.from_user.first_name)
                     if qqq == None:
                         count = [x for x in count if x != msg.text]
                         bot.send_message(msg.chat.id, paint_field, reply_markup=markup1)
@@ -185,7 +185,7 @@ def continuation2_game(msg):
                     paint_field1 = game_Tic.process_game(paint_field,msg.text, how_walks)
                     paint_field = paint_field1
                     how_walks -= 1
-                    qqq = game_Tic.check_win(paint_field)
+                    qqq = game_Tic.check_win(paint_field,msg.from_user.first_name)
                     if qqq == None:
                         count = [x for x in count if x != msg.text]
                         bot.send_message(msg.chat.id, paint_field, reply_markup=markup1)

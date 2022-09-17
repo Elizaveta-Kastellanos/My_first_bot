@@ -8,6 +8,12 @@ def answer_logger(data):
     with open(file_log_answer, 'a') as file:
         file.write(f'{time} Answer = {data}\n')
 
+
+def game_tik_logger(data):
+    f_game_log = 'game.txt'
+    time = dt.now().strftime("%d/%m/%Y Time %H:%M")
+    with open(f_game_log, 'a') as f:
+        f.write(f'{time} - {data}')
 # def data_logger(data):
 #     file_data = 'answer_only.txt'
 #     with open(file_data, 'w') as file:
